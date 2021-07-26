@@ -7,9 +7,12 @@ baseurl="https://asn.ipinfo.app/api/download/ipset/AS"
 # Edit this list before use
 # 使用之前修改该列表
 # 使う前にこのリストを編集します。
-asnlist="13335
+asnlist="123456
 12345
 1234"
+# You must not input 13335, Because that url is using CloudFlare! the script will down!
+# 绝对不要屏蔽13335,因为这个url是使用CloudFlare的！这样做会导致脚本失效！
+# 絶対に13335を入力するな！このurlはCloudFlareを使っています。それならスクリプトが使えないです。
 if [ "$1" == "--delall" ]; then
     for i in $asnlist;
     do
