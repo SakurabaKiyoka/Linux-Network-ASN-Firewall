@@ -31,7 +31,9 @@ Command args:
 Autoupdate: Just add `/bin/bash path of this script` to crontab. When this script running, It will be delete all exist rules and re-block with new list.
 
 **DONOT BAN YOUR CURRENT ASN AND 13335!!**
+
 If you do that, You might be lost control of your server!
+
 If you input 13335, The script will down. Because the API is using CloudFlare.(or you can use some reverse proxy to that url.)
 
 ---
@@ -60,9 +62,13 @@ If you input 13335, The script will down. Because the API is using CloudFlare.(o
 # 其他内容
 
 自动更新：只需要把`/bin/bash 脚本完整路径`放到crontab，设置好时间就可以定期自动更新。当脚本运行的时候，会首先删除旧的规则，然后自动把新的规则加入进去进行屏蔽。
+
 **绝对不要屏蔽你自己正使用的ASN和不要屏蔽13335！！**
+
 如果这样做有可能导致你失去服务器控制权。
+
 如果屏蔽13335会导致脚本失效。因为API使用CloudFlare（或者使用反代来避免这个问题。）
+
 ---
 
 
@@ -90,6 +96,9 @@ ASNによるIPを遮断し、CloudFlareファイアウォールと同じもの�
 # そのほか
 
 自動更新：`/bin/bash スクリプトのパス`をcrontabにおいて、実行時間を設定すると、自動更新ができます。スクリプトが実行する時に、まずすべてのルールを削除してから、新しいルールが自動に挿入されています。
+
 **絶対に自分が使っているASNを遮断する、及び13335を遮断するな！**
+
 もし自分が使っているASNを遮断し、サーバーへのコントロールできない恐れがあります。
+
 もし13335を遮断すれば、このスクリプトは動作できない。このAPIがCloudFlareを使っているため、遮断できません。（あるいはリバースプロキシでAPIと接続もOK）
