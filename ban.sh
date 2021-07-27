@@ -46,6 +46,10 @@ else
 # Delete rules first for pre-run.
 # 执行之前删除旧规则
 # 実行する前に古いルールを削除
+    sleep 5
+    # ensure the network connection.
+    # 确保网络链接正常后再执行
+    # ネットワーク接続を確保
     for init in $asnlist;
     do
         iptables -D INPUT -m set --match-set "$init-4" src -j DROP 2>&1>/dev/null
