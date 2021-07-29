@@ -46,10 +46,6 @@ else
 # Delete rules first for pre-run.
 # 执行之前删除旧规则
 # 実行する前に古いルールを削除
-    sleep 5
-    # ensure the network connection.
-    # 确保网络链接正常后再执行
-    # ネットワーク接続を確保
     for init in $asnlist;
     do
         iptables -D INPUT -m set --match-set "$init-4" src -j DROP 2>&1>/dev/null
@@ -67,12 +63,6 @@ else
         rm "$i.sh" -rf
     done
 fi
-# save rules
-# 保存规则
-# ルールを保存
-/usr/sbin/ipset save >/etc/ipset.rule
-/usr/sbin/iptables-save >/etc/iptables.rule
-/usr/sbin/ip6tables-save >/etc/ip6tables.rule
 # return to original folder
 # 返回原工作文件夹
 # 元のフォルダに戻る
