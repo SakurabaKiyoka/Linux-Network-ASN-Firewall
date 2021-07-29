@@ -30,6 +30,8 @@ Command args:
 
 Autoupdate: Just add `/bin/bash path of this script` to crontab. When this script running, It will be delete all exist rules and re-block with new list.
 
+If some asn are not blocked, Please consider to modify the delay time.
+
 **DONOT BAN YOUR CURRENT ASN AND 13335!!**
 
 If you do that, You might be lost control of your server!
@@ -63,6 +65,8 @@ If you input 13335, The script will down. Because the API is using CloudFlare.(o
 
 自动更新：只需要把`/bin/bash 脚本完整路径`放到crontab，设置好时间就可以定期自动更新。当脚本运行的时候，会首先删除旧的规则，然后自动把新的规则加入进去进行屏蔽。
 
+如果某些ASN没被屏蔽，可以尝试增加一下延时时间。
+
 **绝对不要屏蔽你自己正使用的ASN和不要屏蔽13335！！**
 
 如果这样做有可能导致你失去服务器控制权。
@@ -78,11 +82,11 @@ ASNによる大量の不正なIPをアクセス拒否のスクリプト。
 
 要件: Linuxシステム(iptables, IPsetが必要)
 
-このスクリプトはDebian 10のテストが完了しました。ほかのシステムも使えると思いますが、使わない場合もあります。使い始めにテストをおきましょう。
+このスクリプトはDebian 10のテストが完了しました。ほかのシステムも使えると思いますが、使えない場合もあります。使い始めにテストをおきましょう。
 
 # 概要
 
-ASNによるIPを遮断し、CloudFlareファイアウォールと同じもの。しかしCloudFlareを利用したくない場合はこのスクリプトに使って自分のサーバーでも使えます。
+ASNによるIPを遮断し、CloudFlareファイアウォールと同じもの。CloudFlareを利用したくない場合はこのスクリプトに使って自分のサーバーでも使えます。
 
 # 使い方法
 
@@ -97,8 +101,10 @@ ASNによるIPを遮断し、CloudFlareファイアウォールと同じもの�
 
 自動更新：`/bin/bash スクリプトのパス`をcrontabにおいて、実行時間を設定すると、自動更新ができます。スクリプトが実行する時に、まずすべてのルールを削除してから、新しいルールが自動に挿入されています。
 
-**絶対に自分が使っているASNを遮断する、及び13335を遮断するな！**
+もしあるASNが遮断されない場合は、遅延設定の時間を増えることと思います。
 
-もし自分が使っているASNを遮断し、サーバーへのコントロールできない恐れがあります。
+**自分が使っているASNを遮断する、また13335を遮断することはできません！**
 
-もし13335を遮断すれば、このスクリプトは動作できない。このAPIがCloudFlareを使っているため、遮断できません。（あるいはリバースプロキシでAPIと接続もOK）
+もし自分が使っているASNを遮断し、サーバーへのコントロールができない恐れがあります。
+
+もし13335を遮断すれば、このスクリプトは動作できない。このAPIがCloudFlareを通じて使っているため、遮断できません。（またリバースプロキシでAPIと接続もOK）
