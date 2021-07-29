@@ -25,6 +25,7 @@ Command args:
 - [-d] number. delete some ASN which you have already blocked by this script. Just input number. Example: AS 12345, just input 12345 here. (Temporary,For permanently please remove the ASN number from the script.)
 - [--delall] remove all rules.
 - [-a] number. add some ASN which you want block. (Temporary,For permanently please input the ASN number into the script.)
+- [-D] number. delay when script running on system booting. this is avoiding some server is not blocking some asn question. If manually running the script, this parameter can be set to 0 to disable delay.
 
 # Others
 
@@ -60,6 +61,7 @@ If you input 13335, The script will down. Because the API is using CloudFlare.(o
 - [-d] 数字. 解除屏蔽某个由本脚本添加的ASN的访问限制。例如AS 12345，只需要输入12345即可。(暂时解除屏蔽，持久化请将其从脚本移除。)
 - [--delall] 清除所有规则。
 - [-a] 数字. 屏蔽某个ASN。 (暂时屏蔽，持久化请将其写入脚本。)
+- [-D] 数字 代码执行延迟。开机自启动有时丢ASN的情况可以调整该值，手动执行代码的时候可以赋值0禁用延迟。
 
 # 其他内容
 
@@ -96,6 +98,7 @@ ASNによるIPを遮断し、CloudFlareファイアウォールと同じもの�
 - [-d] 数字. 指定のASNの遮断を解除する。例えばAS 12345は12345だけを指定する。（一時的に、永久に解除したら番号をスクリプトに外します。）
 - [--delall] すべてのルールをクリア。
 - [-a] 数字. 指定のASNを遮断。 （一時的に、永久に遮断したら番号をスクリプトに挿入します。）
+- [-D] 数字. スクリプト起動時に遅延設定。一部のサーバーはシステム起動時に部分のASN番号が遮断できない問題に対してこのパラメータを調整すると思います。
 
 # そのほか
 
