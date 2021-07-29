@@ -13,16 +13,6 @@ asnlist="123456
 # You must not input 13335, Because that url is using CloudFlare! the script will down!
 # 绝对不要屏蔽13335,因为这个url是使用CloudFlare的！这样做会导致脚本失效！
 # 絶対に13335を入力するな！このurlはCloudFlareを使っています。それならスクリプトが使えないです。
-delay=5
-while getopts 'D:' OPT; do
-case $OPT in
-D)
- echo "Network Delay set to $OPTARG seconds"
- delay=$OPTARG;;
-?)
- delay=5
-esac
-done
 if [ "$1" == "--delall" ]; then
     for i in $asnlist;
     do
@@ -56,7 +46,7 @@ else
 # Delete rules first for pre-run.
 # 执行之前删除旧规则
 # 実行する前に古いルールを削除
-    sleep $delay
+    sleep 5
     # ensure the network connection.
     # 确保网络链接正常后再执行
     # ネットワーク接続を確保
@@ -80,9 +70,9 @@ fi
 # save rules
 # 保存规则
 # ルールを保存
-/usr/sbin/ipset save
-/usr/sbin/iptables-save
-/usr/sbin/ip6tables-save
+/usr/sbin/ipset save >/dev/null
+/usr/sbin/iptables-save >/dev/null
+/usr/sbin/ip6tables-save >/dev/null
 # return to original folder
 # 返回原工作文件夹
 # 元のフォルダに戻る
