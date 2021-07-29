@@ -38,6 +38,10 @@ If you do that, You might be lost control of your server!
 
 If you input 13335, The script will down. Because the API is using CloudFlare.(or you can use some reverse proxy to that url.)
 
+# Auto boot
+
+You can run install-to-service.sh to keep this script available when system booting.
+
 ---
 
 # 中文说明
@@ -73,6 +77,10 @@ If you input 13335, The script will down. Because the API is using CloudFlare.(o
 如果这样做有可能导致你失去服务器控制权。
 
 如果屏蔽13335会导致脚本失效。因为API使用CloudFlare（或者使用反代来避免这个问题。）
+
+# 自启动
+
+可以执行install-to-service.sh让脚本开机也可保持屏蔽状态。
 
 ---
 
@@ -110,3 +118,7 @@ ASNによるIPを遮断し、CloudFlareファイアウォールと同じもの�
 もし自分が使っているASNを遮断し、サーバーへのコントロールができない恐れがあります。
 
 もし13335を遮断すれば、このスクリプトは動作できない。このAPIがCloudFlareを通じて使っているため、遮断できません。（またリバースプロキシでAPIと接続もOK）
+
+# 起動時に自動有効設定
+
+install-to-service.shを実行し、システムが起動中に自動に前回の設定に従って遮断を行います。
