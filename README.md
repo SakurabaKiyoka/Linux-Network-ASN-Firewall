@@ -26,6 +26,10 @@ Command args:
 - [--delall] remove all rules.
 - [-a] number. add some ASN which you want block. (Temporary,For permanently please input the ASN number into the script.)
 
+## Nginx Version
+
+Just modify the asnlist which in nginx.sh, Then add "include asnblock[asn].conf;" to your hosting config file. For example, Blocking AS 13335, Firstly modify nginx.sh and add 13335 to asnlist,Then run script, Add "include asnblock13335.conf;" to your nginx hosting config file. Finally run nginx -s reload, The rule will be enabled.
+
 # Others
 
 Autoupdate: Just add `/bin/bash path of this script` to crontab. When this script running, It will be delete all exist rules and re-block with new list.
@@ -65,6 +69,9 @@ You can run install-to-service.sh to keep this script available when system boot
 - [--delall] 清除所有规则。
 - [-a] 数字. 屏蔽某个ASN。 (暂时屏蔽，持久化请将其写入脚本。)
 
+## Nginx版本
+
+只需要修改nginx.sh的asnlist，然后添加"include asnblock[asn].conf;"到对应的主机即可。比如要屏蔽13335，首先修改nginx.conf的asnlist，添加13335后运行脚本，然后在nginx的对应主机文件中添加"include asnblock13335.conf;"保存后执行nginx -s reload即可使规则生效。
 
 # 其他内容
 
@@ -106,6 +113,9 @@ ASNによるIPを遮断し、CloudFlareファイアウォールと同じもの�
 - [--delall] すべてのルールをクリア。
 - [-a] 数字. 指定のASNを遮断。 （一時的に、永久に遮断したら番号をスクリプトに挿入します。）
 
+## Nginxバージョン
+
+nginx.shのasnlistとセッティングファイルパスを変更しさえあれば、"include asnblock[asn].conf;"を対応のホストセッティングファイルに貼り付けてからできます。例えば13335を遮断したい場合は、まずnginx.shを編集して、それから対応のホストセッティングファイルに"include asnblock[asn].conf;"を貼り付けて、nginx -s reloadを実行すると有効になります。
 
 # そのほか
 
