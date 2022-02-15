@@ -7,24 +7,24 @@
 
 ---
 
-ASN number based Linux system IP block tools.
+AS number based Linux system IP block tools.
 
 Requirement: Linux(with iptables, IPset)
 
-This script was tested in Debian 10. Others system might be work but I can't ensure it will be work properly. Please test before use.
+This script was tested in Debian 10 and 11. Others system might be work but I can't ensure it will be work properly. Please test before use.
 
 # Summary
 
-It can block by ASN number. Just like CloudFlare's firewall do. Now you can block by ASN number without CloudFlare's firewall.
+It can block by AS number. Just like CloudFlare's firewall do. Now you can block by AS number without CloudFlare's firewall.
 
 # Usage
 
-Just edit the script, One ASN number per line in script's asnlist variable.
+Just edit the script, One AS number per line in script's asnlist variable.
 
 Command args: 
 - [-d] number. delete some ASN which you have already blocked by this script. Just input number. Example: AS 12345, just input 12345 here. (Temporary,For permanently please remove the ASN number from the script.)
 - [--delall] remove all rules.
-- [-a] number. add some ASN which you want block. (Temporary,For permanently please input the ASN number into the script.)
+- [-a] number. add some ASN which you want block. (Temporary,For permanently please input the AS number into the script.)
 
 ## Nginx Version
 
