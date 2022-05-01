@@ -11,8 +11,9 @@ AS number based Linux system IP block tools.
 
 Requirement: Linux(with iptables, IPset)
 
-This script was tested in Debian 10 and 11. Others system might be work but I can't ensure it will be work properly. Please test before use.
+This script was tested in Debian 10 and 11, Proxmox VE 7. Others system might be work but I can't ensure it will be work properly. Please test before use.
 
+**No Guarantee! The author of this script can't guarantee what will happend after use, USE IT AT YOU OWN RISK.**
 # Summary
 
 It can block by AS number. Just like CloudFlare's firewall do. Now you can block by AS number without CloudFlare's firewall.
@@ -54,7 +55,9 @@ You can run install-to-service.sh to keep this script available when system boot
 
 依赖: Linux系统(需要iptables, IPset)
 
-该脚本测试于Debian 10，其他系统应该也可以使用，但未经测试，不一定能用。使用前请首先测试。
+该脚本测试于Debian 10, Debian 11, Proxmox VE 7，其他系统应该也可以使用，但未经测试，不一定能用。使用前请首先测试。
+
+**免责声明：本脚本造成的一切后果作者无法预知与控制，请使用者自行承担一切后果。**
 
 # 概述
 
@@ -94,17 +97,19 @@ You can run install-to-service.sh to keep this script available when system boot
 
 # 日本語説明
 
-ASNによる大量の不正なIPをアクセス拒否のスクリプト。
+ASNによる大量の不正なIPアクセスを拒否するスクリプト。
 
 要件: Linuxシステム(iptables, IPsetが必要)
 
-このスクリプトはDebian 10のテストが完了しました。ほかのシステムも使えると思いますが、使えない場合もあります。使い始めにテストをおきましょう。
+このスクリプトはDebian 10, Debian 11,  Proxmox VE 7でテスト完了しました。ほかのシステムも使えると思いますが、使えない場合もあります。使い始めにテストをおきましょう。
+
+**利用中自己責任！当スクリプトの作者は何が起こることを保証しかねますので一切の責任を負いかねます。**
 
 # 概要
 
-ASNによるIPを遮断し、CloudFlareファイアウォールと同じもの。CloudFlareを利用したくない場合はこのスクリプトに使って自分のサーバーでも使えます。
+ASNによるIPを遮断し、CloudFlareファイアウォールと同じもの。CloudFlareを利用したくない場合はこのスクリプトに使って自分のサーバーでASNファイアウォールも使えます。
 
-# 使い方法
+# 使用方法
 
 スクリプトにあったasnlist変数を編集して、毎行につきASN番号の数字部分を挿入する。
 
@@ -123,7 +128,7 @@ nginx.shのasnlistとセッティングファイルパスを変更しさえあ�
 
 もしあるASNが遮断されない場合は、遅延設定の時間を増えることと思います。
 
-**自分が使っているASNを遮断する、また13335を遮断することはできません！**
+**自分が使っているASNを遮断し、また13335を遮断することはできません！**
 
 もし自分が使っているASNを遮断し、サーバーへのコントロールができない恐れがあります。
 
